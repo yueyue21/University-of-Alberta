@@ -1,0 +1,130 @@
+Note 2 workarounds 
+- selected SVNKit instead of JavaHL
+- ignored forbidden references because of access restrictions on
+  UofAC114.jar
+see below for more info.
+
+- added this file to the workspace
+- disabled Subclipse reporting.
+  on pop-up
+  - unchecked 'Report usage of Subclipse to Subclipse team'
+  - clicked Cancel
+- Closed the Welcome menu.
+- The Outline, Javadoc, Task List, Declaration and Javadoc
+  Views were closed.
+- The Console View was opened.
+- left Problems and Package Explorer
+- Made a project. to check if got SVN errors 
+  - didn't get any
+  - deleted project
+- Window -> Preferences, General -> Web Browser, New ...
+    - default
+    - /usr/local/bin/exo-open
+    - --launch WebBrowser
+    - checked default
+- Depressed Link with Editor button in Package Explorer View.
+- From the Package Explorer View, rt.jar was filtered.
+- The following settings available via the Preferences option in the
+  Window menu have been changed:
+  - General -> Editors -> File Associations: under File types added
+    a *.class, and for *.class under Associated Editors added a No
+    Source Found editor and made it the default.
+  - General -> Startup and Shutdown -> unchecked everything under
+    Plug-ins
+  - General -> Workspace: unchecked Build automatically and checked
+    Save automatically before build .
+  - General -> Workspace -> Linked Resources: disabled (unchecked)
+  - Java -> Code Style -> Formatter, made a new 'U of A CS' profile
+    - main changes are that most { go on next line, and there are a
+      few more blank lines
+  - Java -> Compiler -> Errors/Warnings, Deprecated and Restricted
+    API, Forbidden reference (access rules), changed to Ignore
+    - workaround for problems similar to
+        Access restriction: The field in from the type Keyboard is not
+        accessible due to restriction on required library
+        /var/local/stow/jdk-1.6.0.20/java/jre/lib/ext/UofAC114.jar a.java
+  - Java -> Editor: unchecked Report problems as you type
+  - Java -> Editor -> Folding: unchecked Imports.
+  - Java -> Editor -> Mark Occurrences: unchecked Mark occurrences
+    of the selected element in the current file
+  - Java -> Editor -> Syntax Coloring, under Element Java ->
+    Deprecated members : unchecked Strikethrough
+  - Run/Debug -> Launching: unchecked Build (if required) before
+    launching
+  - Run/Debug -> Perspectives, 'Open the associated perspective when
+    launching', chose Always
+  - Team -> SVN, 'SVN Interface:', 'Client:' chose 'SVNKit (Pure
+    Java) SVNKit v1.3.2.6267'
+    - also unchecked a JavaHL option higher up on the same page
+    - workaround for SVN 1.6 bug described at
+      http://subclipse.tigris.org/wiki/JavaHL#head-3a1d2d3c54791d2d751794e5d6645f1d77d95b32
+    - was needed for Galileo, but maybe no for Helios.
+      did still get similar error, but didn't look into further
+
+- The following two templates have been added (via Java -> Editor ->
+	Templates):
+
+    - An Applet.java template, named App
+
+import java.awt.*;
+import java.applet.*;
+
+/*
+ * This is an Applet class template. Change the name
+ * of the class (class_name) appropriately, and put
+ * your code in the paint method.
+ */
+
+// Replace class_name with the first
+// part of the file name.  For example:
+//      class_name: MyClass
+//      file name : MyClass.java
+// Here's an incorrect example:
+//      class_name: MyClass
+//      file name : MyFile.java
+public class ${class_name} extends Applet
+{
+
+    // This is the paint method.
+    public void paint(Graphics screen)
+    {
+
+        // Put your code in this method.
+        // Here's a sample statement.
+        screen.drawString("Hi.", 10, 10);
+        ${cursor}
+    }
+}
+
+
+    - An Application.java template , named main (renamed original main
+      to mainmethod ... note our main is likely currently not used, so
+      maybe should be junked or renamed).
+
+/*
+ * This is an Application template. Change the name
+ * of the class (class_name) appropriately, and put
+ * your code in the main method.
+ */
+
+// Replace class_name with the first
+// part of the file name.  For example:
+//    class_name: MyClass
+//    file name : MyClass.java
+// Here's an incorrect example:
+//    class_name: MyClass
+//    file name : MyFile.java
+public class ${class_name}
+{
+
+    // This is the main method.
+    public static void main(String[] arguments)
+    {
+
+        // Put your code in this method.
+        // Here's a sample statement.
+        System.out.println("Hi.");
+        ${cursor}
+
+    }
+}

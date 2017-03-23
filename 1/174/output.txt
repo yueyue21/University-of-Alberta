@@ -1,0 +1,17 @@
+/home/dsk16/ugrad/yyin/workspace
+New Empty File~
+WORKSPACE_3.6.2_SETTINGS
+aaa.py
+input_example.log
+lab10.py
+lab11.py
+lab6.py
+lab8.py
+lab9.py
+output.txt
+prectice.py
+untitled-1.py
+untitled-2.py
+untitled-3.py
+untitled-6.py
+words.txt
