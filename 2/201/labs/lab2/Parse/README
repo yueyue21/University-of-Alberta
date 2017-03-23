@@ -1,0 +1,29 @@
+name:               Joe Programmer
+ONE Card number:    9999999
+Unix id:            joe
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D01
+TA's name:          Konrad Lindenbach
+
+Does the following (see parse.c comment for more details)
+
+  Read from input file (1st col.)             Convert to this (2nd col.)
+  ==============================              =========================
+  various forms of CLEARScreen                clearScreen
+  various forms of Pause n                    pause n_r
+  various forms of END                        end
+  various forms of DRAWSegment x1 y1 x2 y2    drawSegment x1_r y1_r x2_r y2_r
+
+  Also rounds the number parameters to drawSegment to all long.
+
+Compile by typing make.
+
+Ensure an executable sketchpad.jar in the current directory, and run by
+typing
+
+./parse ./input_file
+
+where input_file is a text file containg valid input for parse.c.
+
+I did not collaborate with anyone.

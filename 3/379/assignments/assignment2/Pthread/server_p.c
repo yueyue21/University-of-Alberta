@@ -1,0 +1,350 @@
+#include <sys/types.h>
+#include <sys/socket.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <netinet/in.h>
+
+#include <err.h>
+#include <errno.h>
+#include <limits.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+#include <dirent.h>
+#include <time.h>
+#include <arpa/inet.h>
+
+int clientsd;
+int file_length;
+char *IP;
+struct data1 {
+	FILE *log,*readfile;
+	
+	char output1[200];
+	char buffer[4], *ep,filelist[255][64],general[80];
+	/*a file name is less than 64 char*/
+	char input1[256],not_get[30];
+	char file_name[200],file_ultimate_name[240];
+	char ch;
+	char mid[30];/* tab IP add tab*/
+	int content_counter;
+	int p_counter;/*max is254*/
+	char content[255];
+	struct sigaction sa;
+	socklen_t clientlen;
+        int sd,file_counter;
+	u_short port;
+	int pid;
+	u_long p;
+ 	char time_record [160];
+  	
+};
+
+
+static void usage()
+{
+	extern char * __progname;
+	fprintf(stderr, "usage: %s portnumber\n", __progname);
+	exit(1);
+}
+
+static void kidhandler(int signum) {
+	/* signal handler for SIGCHLD */
+	waitpid(WAIT_ANY, NULL, WNOHANG);
+}
+
+void display (char *buffer){
+	ssize_t written, w;
+	w = 0;
+	written = 0;
+	while (written < strlen(buffer)) {
+	w = write(clientsd, buffer + written, strlen(buffer) - written);
+	if (w == -1) {
+		if (errno != EINTR)
+			err(1, "write failed");
+	}
+	else
+		written += w;
+	}
+}
+
+void read_input(char *buffer){
+	ssize_t read1,r;
+	r = 0;
+	read1 = 0;
+	r=read(clientsd, buffer,1000);
+	if (r == -1){
+		if (errno != EINTR)
+			err(1,"read failed");
+	}
+}
+
+void check_first(char* buffer,char *not_get,char *output1,char *time_record){
+	if(strncmp("GET ",buffer,4) ==0){
+	}
+	else{
+		display(not_get);
+		display(time_record);
+		display(output1);
+		close(clientsd);
+	}
+}
+
+void check_second(char* buffer,char* file_name){
+	for(file_length=0;buffer[file_length]!=' ';file_length++){
+		file_name[file_length]=buffer[file_length];
+	}
+}
+
+void check_third(char* buffer,char *not_get,char *output1,char *time_record){
+	if(strncmp("HTTP/1.1\n",buffer,8) ==0){
+	}
+	else{
+		display(not_get);
+		display(time_record);
+		display(output1);
+		close(clientsd);
+	}	
+}
+void write_log(FILE *log,char *log_file,char* buffer){
+	
+  	
+	log = fopen(log_file, "a");
+	if (log == NULL) {
+  		fprintf(stderr, "Can't open output file %s!\n",log_file);
+  		exit(1);
+	}
+	fprintf(log,"%s",buffer);
+	fclose(log);
+}
+
+void server(void *data){
+	struct data1 *my_data;
+	my_data = (struct data1 *)data;
+	
+	FILE *log,*readfile;
+	log = my_data->log;
+	readfile = my_data->readfile;
+	
+	char output1[200];
+	strncpy(output1,my_data->output1,200);
+	
+	char buffer[4];
+	strncpy(buffer,my_data->buffer,4);
+
+	char input1[256],not_get[30];
+	strncpy(input1,my_data->input1,256);
+	strncpy(not_get,my_data->not_get,30);
+	char file_name[200],file_ultimate_name[240];
+	strncpy(file_name,my_data->file_name,200);
+	strncpy(file_ultimate_name,my_data->file_ultimate_name,240);
+	char ch;
+	ch=my_data->ch;
+	char mid[30];
+	strncpy(mid,my_data->mid,30);
+	
+	char content[255];
+	strncpy(content,my_data->content,255);
+	//struct sigaction sa;
+	//socklen_t clientlen;
+        int sd,file_counter;
+        sd=my_data->sd;
+        file_counter=my_data->file_counter;
+        file_counter = 0;
+	u_short port;
+	port=my_data->port;
+	int pid;
+	pid=my_data->pid;
+	u_long p;
+	p=my_data->p;
+	time_t rawtime;
+  	struct tm * timeinfo;
+ 	//char time_record [160];
+ 	//time_record=my_data->time_record;
+  	time (&rawtime);
+  	timeinfo = localtime (&rawtime);
+  	/*-----------------------*/
+  	int content_counter = 0;
+	int p_counter = 0;/*max is254*/
+			/*                         
+			*		get string from the input
+			*/
+	read_input(input1);
+	check_first(input1,not_get,output1,time_record);
+	check_second(&input1[4],file_name);
+	check_third(&input1[file_length+5],not_get,output1,time_record);
+			
+			/*GET THE WHOLE FILE NAME WITH DIR if possible*/
+	strncpy(file_ultimate_name, argv[2],strlen(argv[2]));
+	strncpy(&file_ultimate_name[strlen(argv[2])],file_name,strlen(file_name));
+			//fprintf("%s",file_ultimate_name);
+	readfile= fopen(file_ultimate_name,"r");
+	if (readfile == NULL) {
+  		fprintf(stderr, "Can't open output file %s!\n",
+  		file_ultimate_name);
+  		exit(1);
+	}
+	while ((ch = fgetc(readfile)) != EOF){
+		if (p_counter >=254){
+			display(content);
+			memset(content,'\0',255);
+			p_counter =0;
+		}
+		content[p_counter]=ch;
+		//display(&ch);
+		p_counter ++;
+		content_counter++;
+	}
+	//display(&content_counter);
+	write_log(log,argv[3],time_record);
+	write_log(log,argv[3],mid);
+	write_log(log,argv[3],IP);
+	write_log(log,argv[3],mid);
+	write_log(log,argv[3],input1);
+	write_log(log,argv[3],buffer);
+}
+
+int main(int argc,  char *argv[])
+{
+	DIR *dir;    /*the dir is the dir contain the documents of server */
+	FILE *log,*readfile;
+	struct dirent *ent;  /* of the dir's*/
+	pthread_t threads;
+	struct sockaddr_in sockname, client;
+	char *ar1,*ar2;
+	
+	int status =0;	/*0 OK
+			*1 Bad Request
+			*2 Not Found
+			*3 Forbidden
+			*4 Internal Server Error
+			*/
+	char output1[200];
+	char buffer[4], *ep,filelist[255][64],general[80];
+	/*a file name is less than 64 char*/
+	char input1[256],not_get[30];
+	char file_name[200],file_ultimate_name[240];
+	char ch;
+	char mid[30];/* tab IP add tab*/
+	int content_counter = 0;
+	int p_counter = 0;/*max is254*/
+	char content[255];
+	struct sigaction sa;
+	socklen_t clientlen;
+        int sd,file_counter;
+        file_counter = 0;
+	u_short port;
+	int pid;
+	u_long p;
+	time_t rawtime;
+  	struct tm * timeinfo;
+ 	char time_record [160];
+  	time (&rawtime);
+  	timeinfo = localtime (&rawtime);
+
+ 	strftime (time_record,80,"%a %d %b %Y %X GMT",timeinfo);
+	if (argc != 4)
+		usage();
+		errno = 0;
+        p = strtoul(argv[1], &ep, 10);
+        if (*argv[1] == '\0' || *ep != '\0') {
+		fprintf(stderr, "%s - not a number\n", argv[1]);
+		usage();
+	}
+        if ((errno == ERANGE && p == ULONG_MAX) || (p > USHRT_MAX)) {
+		fprintf(stderr, "%s - value out of range\n", argv[1]);
+		usage();
+	}
+	if ((dir = opendir(argv[2])) != NULL){
+		printf("Documents file exists files displays below:\n");
+		while((ent = readdir (dir)) != NULL){
+			strncpy(filelist[file_counter], ent->d_name,
+			sizeof(filelist[file_counter]));
+			printf("%s\n",ent->d_name);
+			file_counter++;
+		}	
+		closedir(dir);
+	}
+	if(mkdir (argv[2],0777) != -1){
+		printf("Directory does not exist, new dir created!\n");
+		}
+	port = p;
+	ar1 = argv[2];
+	ar2 = argv[3];
+	data1.readfile= ar1;
+	data1.log= ar2;
+	if (daemon(1, 0) == -1)
+		err(1, "daemon() failed");
+	/* the message we send the client */
+	memset(output1,'\0',200);
+	memset(content,'\0',255);
+	memset(file_name,'\0',200);
+	memset(file_ultimate_name,'\0',240);
+	memset(input1,'\0',256);
+	memset(mid,'\0',30);
+	
+	strncpy(output1,"\nContent-Type: text/html\nContent-Length: ",40);
+	strncpy(&output1[40],"107\n\n<html><body><h2>Malformed Request</",40);
+	strncpy(&output1[80],"h2>\nYour browser sent a request I could ",40);
+	strncpy(&output1[120],"not understand.\n</body></html>\n",60);
+	strncpy(buffer,"\n",sizeof(buffer));
+	strncpy(mid,"\t",sizeof(mid));
+	strncpy(not_get,"HTTP/1.1 400 Bad Request\nDate: ",sizeof(not_get));
+	strncpy(general,"Please enter the file name you want(^C for exit):",
+	sizeof(general));     
+	memset(&sockname, 0, sizeof(sockname));
+	sockname.sin_family = AF_INET;
+	sockname.sin_port = htons(port);
+	sockname.sin_addr.s_addr = htonl(INADDR_ANY);
+	sd=socket(AF_INET,SOCK_STREAM,0);
+	if ( sd == -1)
+		err(1, "socket failed");
+
+	if (bind(sd, (struct sockaddr *) &sockname, sizeof(sockname)) == -1)
+		err(1, "bind failed");
+
+	if (listen(sd,3) == -1)
+		err(1, "listen failed");
+	
+	sa.sa_handler = kidhandler;
+        sigemptyset(&sa.sa_mask);
+        sa.sa_flags = SA_RESTART;
+        if (sigaction(SIGCHLD, &sa, NULL) == -1)
+                err(1, "sigaction failed");
+	printf("Server up and listening for connections on port %u\n", port);
+	IP= inet_ntoa(client.sin_addr);
+	for(;;) {
+		int print_counter=0; /*initialize the client display counter*/
+		
+		clientlen = sizeof(&client);
+		clientsd = accept(sd, (struct sockaddr *)&client, &clientlen);
+		if (clientsd == -1)
+			err(1, "accept failed");
+		data1->sd = clientsd;
+		/*
+		 * We fork child to deal with each connection, this way more
+		 * than one client can connect to us and get served at any one
+		 * time.
+		 */
+
+		pid = pthread_create(&threads, NULL, server, (void *) data1);
+		if (pid)
+		     err(1, "fork failed");
+
+		else {
+			exit(0);/* this need come after the writing on the file*/
+			
+		}
+		
+		close(clientsd);
+	}
+	
+	
+	
+	
+	
+	
+	
+}

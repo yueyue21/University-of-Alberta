@@ -1,0 +1,11 @@
+<html>
+<head></head>
+<body>
+  <form action= "Login.jsp" method="post">
+    <center>Welcome to Oracle Web Database:<br>
+    <input type="text" name= "Username"><br>
+    <input type="text" name= "Password"><br>
+    <input type="submit" name="submit">
+  </form>
+</body>
+</html>

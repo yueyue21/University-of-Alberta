@@ -1,0 +1,4 @@
+prompt Question 1 - yyin
+select p.name, p.address, p.phone 
+from patient p,test_record t 
+where p.health_care_no = t.patient_no and t.medical_lab = 'c lab';

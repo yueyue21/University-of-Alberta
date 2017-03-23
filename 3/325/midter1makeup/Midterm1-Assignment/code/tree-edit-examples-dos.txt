@@ -1,0 +1,49 @@
+List modifying:
+
+> (list-edit (lambda (x) (* 10 x)) '(0 1 2 3 4) 2)
+    '(0 1 20 3 4)
+
+Tree path following:
+
+> t1
+    (a (b c) (d (e f) (g h (i j))))
+ 
+> (e-tree-ref t1 '())
+    (a (b c) (d (e f) (g h (i j))))
+
+> (e-tree-ref t1 '(0))
+    a
+
+> (e-tree-ref t1 '(2))
+    (d (e f) (g h (i j)))
+
+> (e-tree-ref t1 '(2 1 1))
+    f
+
+> (e-tree-ref t1 '(2 2 2 1))
+    j
+
+Tree path finding
+
+> t2
+    (a (b a) (b (a f) (f h (b a))))
+ 
+> (e-tree-find-paths 'a t2)
+    ((0) (1 1) (2 1 0) (2 2 2 1))
+
+> (e-tree-find-paths 'b t2)
+    ((1 0) (2 0) (2 2 2 0))
+
+> (e-tree-find-paths '(b a) t2)
+    ((1) (2 2 2))
+
+
+Tree editing:
+
+> (e-tree-edit-many (lambda (s) 'delta) t2 (e-tree-find-paths 'a t2))
+    (delta (b delta) (b (delta f) (f h (b delta))))
+
+> (e-tree-edit-many (lambda (s) 'delta) t2 (e-tree-find-paths '(b a) t2) )
+    (a delta (b (a f) (f h delta)))
+
+> 

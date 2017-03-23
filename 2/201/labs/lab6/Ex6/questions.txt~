@@ -1,0 +1,134 @@
+
+Examine the output from eg1 and eg2, and understand eg.c, then answer
+the questions below.  Each question is worth the same amount.  Each
+question applies to an _unmodified_ eg.c, unless otherwise specified.
+
+The output will look similar to the following (the memory addresses
+will likely be different than what you see).  Line numbers have been
+added here:
+ 
+eg1:
+
+ 1  intarr[3] = 40, intarr+3 = 0xbffb2aac, *(intarr+3)= 40
+ 2  intptr[3] = 40, intptr+3 = 0xbffb2aac, *(intptr+3)= 40
+ 3  intarr[3] = 99, intarr+3 = 0xbffb2aac, *(intarr+3)= 99
+ 4  intptr[3] = 99, intptr+3 = 0xbffb2aac, *(intptr+3)= 99
+ 5  *(intarr+3) = 99, *intarr+3 = 13
+ 6  sizeof(intarr) = 20, sizeof(intptr) = 4
+ 7  string1 = 123456789, string2_ptr = 123456789
+ 8  strnlen(string1, STR_LEN+1) = 9,  strnlen(string2_ptr, STR_LEN+1) = 9
+ 9  sizeof(string1) = 10 sizeof(string2_ptr) = 4
+
+eg2:
+
+ 1  intarr[3] = 40, intarr+3 = 0xbfb69ddc, *(intarr+3)= 40
+ 2  intptr[3] = 40, intptr+3 = 0x804a014, *(intptr+3)= 40
+ 3  intarr[3] = 99, intarr+3 = 0xbfb69ddc, *(intarr+3)= 99
+ 4  intptr[3] = 40, intptr+3 = 0x804a014, *(intptr+3)= 40
+ 5  *(intarr+3) = 99, *intarr+3 = 13
+ 6  sizeof(intarr) = 20, sizeof(intptr) = 4
+ 7  string1 = 123456789, string2_ptr = 123456789
+ 8  strnlen(string1, STR_LEN+1) = 9,  strnlen(string2_ptr, STR_LEN+1) = 9
+ 9  sizeof(string1) = 10 sizeof(string2_ptr) = 4
+
+Questions
+
+All answers should be 3-4 sentences at most.
+
+  1. On line 4 of the output, why does intptr[3] have a different value
+     for eg2 than for eg1?
+----------------------------------------------------------------------
+because in eg1, the initial address (intptr) is same as initial address
+of the array(intarr).synchronized change can be made.
+----------------------------------------------------------------------
+
+  2. On line 5 of the output, *(intarr+3) = 99, but *intarr+3 = 13.
+     Explain why this is so.
+----------------------------------------------------------------------
+*(intarr+3)gives the value of the 4th item in array,while *intarr + 3
+gives the value of the 1st item + 3 == 10 +3.
+----------------------------------------------------------------------
+
+  3. On line 6 of the output, why does sizeof report different sizes?
+     (The answer "because sizeof is given different variables" is
+      not correct.  Hint:  see
+
+       http://en.wikipedia.org/wiki/Sizeof#Using_sizeof_with_arrays
+     )
+----------------------------------------------------------------------
+sizeof(intarr)is the size of the array in byte with each int is 4 byte
+sizeof(intptr)is the size of an individual pointer which varies from 
+mechine to mechine (64bits or 32bits)
+----------------------------------------------------------------------
+
+  4. strnlen and sizeof report different numbers for the strings
+     Why?  (Hints:  man strnlen, and see the hint for question 3)
+----------------------------------------------------------------------
+strnlen()get every charactor stop at non char, thus is 9,sizeof(string1)
+is the size of the array string1 in byte with each char is 1 byte.
+sizeof(string2_ptr)is the size of an individual pointer which varies from 
+mechine to mechine (64bits or 32bits)
+----------------------------------------------------------------------
+
+  5. Is the 10th element of the character array assigned a value? If
+     so, what is that value?  (for marking this is considered 1 question)
+----------------------------------------------------------------------
+yes, the value is '\0'.
+----------------------------------------------------------------------
+
+   (The following is used for questions 6-8.)
+    Towards the end of eg.c, there are the two lines.
+
+      string2_ptr = string1;
+      intptr = intarr;
+
+  6. Do these assignments make two copies of the contents of string1
+     and intarr respectively, at different locations in memory?
+----------------------------------------------------------------------
+NO,they have the same location.
+----------------------------------------------------------------------
+
+  7. After these assignments, what happened to the memory allocated
+     with malloc for string2_ptr and intptr?
+----------------------------------------------------------------------
+They dead.The memory could no longer be referred.
+----------------------------------------------------------------------
+
+  8. What should have been done to this memory before these two
+     assignments, if the memory was no longer needed?
+----------------------------------------------------------------------
+save these address to a new variable first, then do the assignments. 
+after that, free the memory pointed by the pointer by which the new
+variables kept.
+----------------------------------------------------------------------
+
+  9. Assume at the end of eg.c (right before the
+
+       return 0;
+
+     line) string1 were changed (e.g., string1[0]='A'). Would that
+     change the contents of the memory to which string2_ptr
+     points?
+
+     This question is _NOT_ asking whether the value  of string2_ptr
+     (i.e., the address stored in string2_ptr) is changed.
+
+     Briefly explain your answer.
+----------------------------------------------------------------------
+it will change the value currently stored in string2_ptr,since string2_ptr
+points to string1[0]
+----------------------------------------------------------------------
+
+ 10. Explain briefly the difference between variables a and b when
+     declared as:
+
+      int a[10][20];
+      int* b[10];
+
+     Assume they're declared inside a function.  This question has
+     nothing to do with eg.c.
+----------------------------------------------------------------------
+a is the initial address of an int array that contains each element is 
+also an array that could contain 20 intgers. b is the initial address of 
+an 10 sized array of pointers 
+----------------------------------------------------------------------

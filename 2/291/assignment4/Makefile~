@@ -1,0 +1,4 @@
+make:
+	gcc -o mydbtest sample.c -ldb -pthread -lm
+clean:
+	-rm -f *.o mydbtest core

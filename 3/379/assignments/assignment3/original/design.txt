@@ -1,0 +1,63 @@
+
+CMPUT 379 ASSIGNMENT 3
+STUDENT :	Yue YIN
+ID		:	1345121
+ 
+** User Documentation
+Use the make file to compile the file, then run it.
+SITE:
+--A player can change the location of his or her site by pressing '['or']',and
+pressing space to fire a rocket straght up.One need to have a good sence of 
+pre-estimation of the speeds of both rocket and saucers, so that he or she can 
+reach a high score. GOOD LUCK!
+
+SAUCERS:
+--The number of saucers is initialized with number of 20.
+--A player can find there are 10 saucers at the beginning of the game. After a 
+while, the number of saucers will increased up to 20.
+--the saucers will appear at top 4 rows at first, gradually they may appear on
+different rows at top 7 rows.
+--The speeds of saucers are could reach a higher amount as the time goes on.
+--The saucers are designed with health of 2,which indicates that only if one 
+hit a saucer twice could deal with it.Also the saucers gives different 
+appearance base on their health status.
+--The max number one is allowed to miss is 20 by default so that the game is 
+not over
+ROCKET:
+--The rocket can piece throw all saucers on the straight line by 1 damage if you
+modify NOT_CHEAT to 0
+** Developer Documentation
+--If you find it is too difficuilt, you can modify the tanimate.h file, which 
+contains basic and initial data of the game iteself. 
+
+** Code Structure
+
+--the main function set all the initial value in to the data structure, after that
+all thread almost created in main function except the rockets' threads. In main, 
+it always checking if the game is over. If the game is over, cancel all threads.
+--the saucers threads is already there once ever the main is called. part of the 
+saucers is invisiable is because they are NULL at first.
+-- the rockets threads is created by 1 once ever there is a keybord interuption
+of space(" "), and it is terminated in the rocket_animation function depends on
+ the cases.
+--the saucers' data structure is define in globle, also the site is.
+--Other globle variables:scours missed, points(score), game total fire,total fire
+rockets remained = game total fire - total fire
+** Threads
+thrds is used for both site and saucers, where the thrds[0] is used for the site
+
+fire_thrds is used for only rockets with limit of 20(0~19), since there are at 
+most 20 rockets can be displayed on the screen at the same time(theoretically).
+once ever a rocket hit a saucer or reach top of the screen, current thread exits.
+The mechanism of ramainder is always lower than the divider enable me to reuse
+the indexes of threads: game_fire%(total_fire+1) < total_fire+1
+Explain what your main thread does, what your saucer threads do, etc.
+
+** Critical Sections
+Whenever using addch,addstr or mvprintw,which is considered as drawing, is 
+quite necessary to be kept into lock, by which we can refuse annoying stuff 
+displaying on the screen. ALL of those critical part is seperate by a blank line
+from other part spliting with locks.However,those increment on counters such as 
+points, can not be locked, otherwise, they may not increase simultaneously.
+
+

@@ -1,0 +1,11 @@
+strcmp:     -f -l
+
+fp= fopen("argv[i]","r")
+while (ch =fgetc()):
+.....
+
+list[a]= {[w],[h]};
+list[a][1]=h
+
+
+voidfp

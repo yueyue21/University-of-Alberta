@@ -1,0 +1,18 @@
+name:               Yue YIN
+ONE Card number:    1345121
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D01
+Unix Id:            yyin
+Assignment3
+================================================================
+Personal statement:
+1:
+I have some improvement of getopt, fuel limition(fuel bar). if the ship go to the edge of right or left, the ship would not go throgh.
+2:
+the ship must landed with the degree of 90, otherwise would failed.
+3:
+the fire of the ship will change with the decreasing of the fuel, starting from green. If the ship is about to running out of fuel, the
+fire would change into extremely red.
+4:
+the program allows the user to press the rotate key and the thrust key together, without error picture displaying

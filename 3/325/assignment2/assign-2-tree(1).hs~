@@ -1,0 +1,24 @@
+data BinTree = L | N BinTree BinTree | N1 BinTree BinTree | NULL deriving (Eq, Show)
+        
+-- this function creates the full binary tree of size 2^(n+1) -1
+makeBinTree 0 = L
+makeBinTree n = N (makeBinTree (n-1)) (makeBinTree (n-1)) 
+
+makeBinTree1 0 = NULL 
+makeBinTree1 n = N1 (makeBinTree (n-1)) NULL
+
+-- this function computes the size of a binary tree
+size NULL  = 0
+size L = 1
+size (N t1 t2) = 1 + size t1 + size t2
+
+
+depth L = 1
+depth NULL = 0
+depth (N t3 t4) = 1 + max (depth t3) (depth t4)
+
+makeABinTree 0 = NULL
+makeABinTree 1 = L
+--makeABinTree 2 = makeBinTree1 1
+makeABinTree s =  if even s then N1 (makeABinTree (s-1)) NULL
+			else  N  (makeABinTree (s-1)/2) (makeABinTree (s-1)/2)

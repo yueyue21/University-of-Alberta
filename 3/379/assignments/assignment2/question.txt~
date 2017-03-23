@@ -1,0 +1,27 @@
+
+1.
+The pthread server and the fork server is easier than the select one, since the
+pthread and fork just spilict processes in to isolated tasks,just displaying 
+some particular context is kind of complex.In terms of the pthread one, the only
+thing difficult is the argument (a struct and a process)need to be compose.
+THE IP address ought to be a globale variable, other it will not be identified.
+For these two server, the most tricky part is to be clear with when a thread or
+a porcess is terminated, such as if a buffer is modified within a thread or a 
+process, and if we want to display it in somewhere in the file, we have to do 
+do that before current thread or process is terminated. otherwise, no change 
+made on the buffer.
+
+for the last one, I haven't done that yet.
+2.
+since a threadstomp on another thread's reasource(data cmputed).If there are a
+few users for such server, fork is stable for such case with limited user would 
+visit the server.
+ 
+3.
+If there are a lot of users for such server, pthread is better, since pthread is
+starts  a  new  thread  in the calling process,which enables a user interact with
+server within a thread,which is easier to create than a process(for fork).
+
+
+
+

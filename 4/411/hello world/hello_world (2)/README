@@ -1,0 +1,36 @@
+
+Mac OSX 10.9 Mavericks:
+-----------------------
+Here is what a Mac user needs to install to compile a basic OpenGL 
+program using the modified Makefile-mac:
+
+- XQuartz
+
+From MacPorts:
+
+- freeglut
+- glew
+
+
+Ubuntu Linux 14.04:
+-------------------
+Here is what a Linux user needs to install to compile a basic OpenGL 
+program using the modified Makefile-linux:
+
+- libglut3-dev
+- libglew-dev
+
+
+To make:
+--------
+
+make square
+
+
+NOTE:
+-----
+If your system does not support OpenGL 4.2 you might have to change the line
+	glutInitContextVersion(4, 2);
+to an earlier version, such as
+	glutInitContextVersion(2, 1);
+

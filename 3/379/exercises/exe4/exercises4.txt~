@@ -1,0 +1,34 @@
+Part 1:
+Question1:
+We just need to assign 50 lottery tickets to P1 every time, if total number of 
+tickets is N, then posibility of P1= 50/N, posibility of P2 = 10/N. Obviousely,
+P1 has 5x higher priority than P2 in excuting.
+Question2:
+difference1:
+In priority scheduling,a process that got a priority is guaranteed to be totally
+completed before those processes are not. However, in lottery scheduling, a
+process that got more lotteries(say P1) could still be suspended having some of 
+P1 excuted after some process that got fewer lotteries(say P2), since every time 
+a lottery is choosen by random. 
+difference2:
+In priority scheduling, a prioritied process would be guaranteed to be excuted 
+before a process that is not priorited. In lottery scheduling, process got more
+tickets could still have a chance to be excuted after those process that got 
+fewer tickets.
+Question3:
+Question4:
+Segmentating allocation will suffer more from external fragmentation of memory,
+since paging allocation does not have external fragmentation, segmentating 
+allocation has no internal fragmentation.
+'\' for fragmentation
+'!' for page divider
+'-' for regular stored information
+'.' for blanks still can be easily used
+Segmentating allocation: 
+randomly insert information into memory like
+---\\\\\\-\\\\\-\\\\\\\-----------------\\\\\\\\\\\\\\\\\
+Paging allocation:
+!----------------!---------------!-----\\\\\\\\\\\!.......
+Part 2:
+
+

@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(void){
+	struct item{
+		int itemNo;
+		double price;
+		double quantity;		
+	};
+	typedef struct{
+		int itemNo;
+		double price;
+		double quantity;		
+	}item;
+	
+}

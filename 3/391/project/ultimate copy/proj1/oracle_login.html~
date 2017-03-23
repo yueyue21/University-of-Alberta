@@ -1,0 +1,32 @@
+<HTML>
+<HEAD>
+<TITLE>Oracle Login</TITLE>
+</HEAD>
+
+<BODY>
+<!--This is the login page-->
+<div id="image" style="background: url(10.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<br><br><br><br><br><br><br><br>	
+<H1><CENTER>Connect to Oracle</CENTER></H1>
+
+<FORM NAME="LoginForm" ACTION="oracle_login.jsp" METHOD="post" >
+
+<P><CENTER>To connect to the Oracle, you need to submit a valid userid and password</P>
+<TABLE>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B><I>Userid:</I></B></TD>
+<TD><INPUT TYPE="text" NAME="SQLUSERID" VALUE = "bicheng"><BR></TD>
+</TR>
+<TR VALIGN=TOP ALIGN=LEFT>
+<TD><B><I>Password:</I></B></TD>
+<TD><INPUT TYPE="password" NAME="SQLPASSWD" VALUE = "yan789458" ></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="submit" NAME="Submit" VALUE="Connect">
+<input type = reset >
+</FORM>
+</CENTER>
+</div>
+</BODY>
+</HTML>

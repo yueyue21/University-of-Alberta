@@ -1,0 +1,36 @@
+CMPUT 397 exercise1
+Student: Yue(Philip) YIN
+Prof:  
+Question 1------
+FALSE
+FALSE
+TRUE
+FALSE
+TRUE
+
+Question 2-----
+	The CPU can only do one thing at a time. While a user
+process is running, dispatcher cannot run, thus the
+operating system may lose control.
+
+Question 3----------
+	One advantage is that you don't have to rebuild your kernel as often. This saves you time and spares you the possibility of introducing an error in rebuilding and reinstalling the base kernel. Once you have a working base kernel, it is good to leave it untouched as long as possible.
+
+Another advantage is that LKMs help you diagnose system problems. A bug in a device driver which is bound into the kernel can stop your system from booting at all. And it can be really hard to tell which part of the base kernel caused the trouble. If the same device driver is an LKM, though, the base kernel is up and running before the device driver even gets loaded. If your system dies after the base kernel is up and running, it's an easy matter to track the problem down to the trouble-making device driver and just not load that device driver until you fix the problem.
+Question 4-------
+In response to a clock interrupt, the OS saves the PC and user stack pointer
+of the currently executing process, and transfers control to the kernel clock
+interrupt handler,
+2.
+The clock interrupt handler saves the rest of the registers, as well as other
+machine state, such as the state of the floating point registers, in the process
+PCB.
+3.
+The OS invokes the scheduler to determine the next process to execute,
+4.
+The OS then retrieves the state of the next process from its PCB, and restores
+the registers. This restore operation takes the processor back to the state in
+which this process was previously interrupted, executing in user code with
+user mode privileges.
+
+Part 2

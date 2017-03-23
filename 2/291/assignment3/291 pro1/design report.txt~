@@ -1,0 +1,70 @@
+in this project, we have made several interfaces(classes) for the user to excute the command choice:
+
+INTERFACES SCRIPT:
+first interface	------->1,Prescription  
+			  1:prescribe 
+			  2:go back
+		          are you going to prescribe a test(1/2)?:^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				-------(1)>employee_no:
+					------->doctor name:
+						------->test name:		
+				------->enter a patient name?(y/n):
+					-------(y)>name of the patient:
+						------->enter a patient health_care_no?(y/n):
+							-------(y)>health_care_no of the patient:
+							-------(n)>/save health_care_no/(invisiable)
+					-------(n)>health_care_no of the patient:
+					   	   /save the patient name as none/(invisiable)
+					------->are you going to prescribe a another test(1/2)?:^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+						-------(1)>/recurtion/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+						--------(2)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+				--------(2)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		------->2,Medical Test
+			  1.patient number
+	          	  2.test type id
+			  3.doctor empolyee number
+			  4.go back
+			  Please choose the data you want to enter to find prescription (1,2,3,4):
+				------->test id of the current test(test id is necessary):
+					-------(1)>Please enter the patient's health care number(please enter an integer):
+						------->Please enter lab name(25 characters):
+						------->enter the lab result(1024 characters):
+						------->record modified,would you like to record another test?(y/n)
+							-------(y)>/recurtion/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+							-------(n)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+					-------(2)>Please enter the test type ID:
+						------->Please enter lab name(25 characters):
+						------->enter the lab result(1024 characters):
+						------->record modified,would you like to record another test?(y/n)
+							-------(y)>/recurtion/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+							-------(n)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+					-------(3)>Please enter the doctor's employee no(enter in integer):
+						------->Please enter lab name(25 characters):
+						------->enter the lab result(1024 characters):
+						------->record modified,would you like to record another test?(y/n):
+							-------(y)>/recurtion/(script)^^^^^^^^^^^^^^^^only 1 position need to medify in the code
+							-------(n)>/go back/(script)^^^^^^^^^^^^^^^^^^only 1 position need to medify in the code
+					-------(4)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		------->3,Patient Information Update
+			------->Have you registed?(y/n):
+			------->enter your health care number:
+				------->Patient Information Update
+					1.name
+					2.address
+					3.birthday
+					4.phone number
+					5.exit
+					Please choose the information you want to update(1,2,3,4,5):*****************************************not complete yet
+					-------(1)>Please enter your new name(100 cahracters):
+					Data updated!
+					1.name
+					2.address
+					3.birthday
+					4.phone number
+					5.exit
+			-------(2)>
+			-------(3)>
+			-------(4)>
+			-------(5)>/go back/(script)^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+		------->4,Search Engine
+		------->5,Exit

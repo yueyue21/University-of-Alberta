@@ -1,0 +1,26 @@
+.data
+
+.text
+
+main:
+		
+		li	$t0 100
+		li	$t9 3600	#total 3600secs for 1h
+		mtc0	$zero $9
+		#sw	0 0xffff000c
+	start:
+		mfc0	$k0 $9
+		rem	$t1 $k0 $t0	
+		div	$t2 $k0 $t0	#t2 is how many seconds passed	
+
+		rem	$t3 $t2 10	#t3 is the sec
+		div	$t4 $t2 10	#t4 is how many 10 secs 
+		beq	$t4 6 min	#carry to mins	
+		beq	$t1 0 display
+		j	start
+	min:
+		
+	display:
+		addi	$t3 $t2 48
+		sw	$t2 0xffff000c
+

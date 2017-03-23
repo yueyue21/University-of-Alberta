@@ -1,0 +1,8 @@
+		if(p->next == NULL)
+			tail = p->prev;
+		else
+			p->next->prev = p->prev;
+the bug is we need put "p->next->prev = p->prev;" into an else where the condition 
+is p->next is NOT a NULL.that is , if p's next is not NULL thus it is not the last
+item in the d-list. therefore,to delete this item, we need to link the p'next item
+by p's previous item.

@@ -1,0 +1,4 @@
+
+
+Fri 07 Mar 2014 17:46:12 GMT	0.0.0.0	GET exercise2.txt HTTP/1.1
+

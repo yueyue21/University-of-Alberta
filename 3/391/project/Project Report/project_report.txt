@@ -1,0 +1,17 @@
+﻿ An On-line Radiology Information System
+
+INSTRUCTOR:		Yuan, Li Yan
+GROUP  MEMBER:	Bicheng 	YAN		1372784
+ 				Yue 		YIN 		1345121
+				Xiaocong 	ZHOU		1281462
+
+Introductions of implementation for each module
+
+Login module:
+User management module:
+Report generating module:
+Uploading module :
+Search module:
+Data analysis module :
+
+This module is designed for users of administrators    

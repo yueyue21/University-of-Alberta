@@ -1,0 +1,34 @@
+<!-- Yue YIN,November 04 -->
+
+cat sars.txt |./mention cough > out1.txt
+<!-- basic functionality test 1, stdin and search term is provided in args -->
+
+./mention -f sars.txt cough > out2.txt
+<!-- basic functionality test 2, text from file and search term in args -->
+
+./mention cough -f sars.txt > out3.txt
+<!-- basic functionality test 3, same as 2 but with diff arg order -->
+
+./mention cough -fsars.txt > out4.txt
+<!-- basic functionality there is no space between -f and the input file-->
+
+cat mars-wikipedia.txt |./mention -l gasses.txt  > out5.txt
+<!-- basic functionality test 5, stdin and search term list -->
+
+cat mars-wikipedia.txt |./mention -lgasses.txt  > out6.txt
+<!-- basic functionality test 6, stdin and search term list,no spaces between -l and file-->
+
+./mention -f mars-wikipedia.txt -l gasses.txt  > out7.txt
+<!-- basic functionality test 7, text from file and search term list -->
+
+./mention -l list1.txt -f text1.txt > out8.txt
+<!-- basic functionality test 8, same as 2 but with diff arg order -->
+
+./mention cOuGH -f sars.txt > out9.txt
+<!-- basic functionality test 9, testing file with multiple lines and case matching -->
+
+./mention t -f text1.txt > out7.txt
+<!-- basic functionality test 7, looking for very first and last character -->
+
+
+

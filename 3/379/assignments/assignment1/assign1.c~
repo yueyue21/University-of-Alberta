@@ -1,0 +1,55 @@
+
+#include <err.h>
+#include <errno.h>
+#include <limits.h>
+#include <setjmp.h>
+#include <signal.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>
+
+static sig_atomic_t do_reread;
+static sig_atomic_t reset_count;
+static sigjmp_buf jumpbuf;
+
+static struct sigaction sa, oldsa;
+
+struct memchunk {
+            void *start;
+            unsigned long length;
+            int RW;
+        };
+
+int get_mem_layout (struct memchunk *chunk_list, int size);
+
+static void handler(int signum) {
+	reset_count++;
+	do_reread = 1;
+	siglongjmp(jumpbuf, 1);
+}	
+
+int main(int argc, char * argv[])
+{
+	
+	/* set up a signal handler to catch SIGINT - which is by default
+	 * generated from Control-C on the keyboard. - we save whatever
+	 * the old action was for SIGINT - and set up a new action to 
+	 * call "handler" when we get a SIGINT.
+	 */
+	sa.sa_handler = handler;
+	sigemptyset(&sa.sa_mask);
+	sa.sa_flags = 0;
+	if (sigaction(SIGINT, NULL, &oldsa) == -1)
+		err(1, "can't save old sigaction");
+	if (sigaction(SIGINT, &sa, NULL) == -1)
+		err(1, "can't do new sigaction");
+
+	while(1) {
+		if (sigsetjmp(jumpbuf, 1) == 0)
+			sleep(1);
+		print("123123123");
+		
+	}
+}
+

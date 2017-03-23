@@ -1,0 +1,139 @@
+ASSIGNMENT 3
+STUDENT : Yue YIN
+ID		: 1345121
+
+
+1.
+(a) F
+Group by cube (v1,v2..vn) is equivlent to a collection of group bys, one of 
+each of the 2^n subsets of v1,v2..vn of v1,v2..vn
+(b) T
+Given Transaction T issues a write(X) operation on database:
+	-Any transaction will be rolled back (aborted) whenever TS of current 
+		ransaction is lower than RTS(x)
+	-write(X) would be ignored TS(T) WTS(x)
+	-whenever T write(x), it will set WTS(X) = TS(T)(update the WTS)
+Given TRANSACTION T issues a read(X) operation:
+	-current transaction T will be abort whenever TS(T) < WTS(X)
+	-read(X) of T will set RTS(Q) = max(TS(T),RTS(x)) (update the RTS)
+The two cases above indicates that timestamp protocol is always keep 
+transactions going sequentially read and write, which enable its dead lock free.
+
+2.
+Data classification: 
+the name and number of classes are given in the training set
+Clustering: 
+the name and number of classes are unknown
+
+3.
+(1)- Everytime insert a row into table registration must satisfy registion.grade
+	 greater than 1 where registration.course_id = prerequisite.course_id
+   - Everytime delete a course on course, we need to guarentee no course's 
+   	 prerquisite is such course
+   - Everytime update on prerequisite table need to monitored by trigger
+
+create trigger meet_prerequisite
+before insert or update on registration
+for each row
+declare
+	dummy integer;
+begin
+	drop or update view tem_prerequisite
+	create view tem_prerequisiteas
+	select p.prerq_id 			-- all prerequisite course for this new course
+	from prerequisite p
+	where p.course_id = new.course_id
+	
+	select count(*) into dummy
+	from tem_prerequisite t
+	where t.prerq_id not in(select r.course_id				
+							from registration r
+							where r.student_id = new.student_id
+							and r.grade <> NULL
+							or r.grade >= 1)
+	-- the later () contains all courses current student have taken with 
+	-- grade grater than 1
+	
+	if (dummy >1)  
+		then raise_application_error (-2000,'course does not exist!')
+	end if
+end
+
+
+
+
+
+
+
+
+
+
+
+4.
+		R = ABCDE
+			/	\	B -> E
+	   	   BE	BACD
+			    /	\ A -> D
+			   AD	ABC
+			   
+Thus, we have {AD, ABC, BE}. Therefore, D is not join lossless with given FDs.
+ 			
+5.
+		R = ABCDEGHI
+			/	   \  AH -> CD
+		 AHCD	 AHBEGI
+		 		 / 	  \  AB -> E
+		 	   ABE	 AHBGI
+		 	   		 /   \  H -> AG
+		 	   	   HAG  HBI
+(a) a join loss-less and BCNF decomposition {AHCD,ABE,HAG,HBI}
+(b) The decomposition above contains all the non-trival FDs X->A in held in any 
+relation Ri, where X is a key of Ri. So such schema is dependency preserving.
+
+6.
+(a) Not recoverable,since T2 read on what T3 has written,which is already 
+committed when it reach the crash point. It can not find the previous value of 
+C even roll back at crash point.
+(b) ...
+(c) we can commit after the crash point for T2, so that no transaction will 
+	over write the log file, or remove the commit in T2
+	
+7.
+Assume a with 52 pages, R:200 pages, S:200 pages. each page has 40 rows.
+each page got 40 tuples, 2 disks(i = 2)
+(a)Brute Force M = 50 , r == 200, s == 200
+then number of disk access  == r + r/m * s == 1000
+(b)Index r: 50 pages  inner s:1 page, output: 1 page
+the number of disk access == r + tuples* r * i = 16200
+16200 >  1000
+8.
+select market_id, item_id, date, SUM(sale)
+from sales
+group by (market_id, item_id, date)
+
+select market_id, item_id, NULL,SUM(sale)
+from sales
+group by (market_id, item_id)
+
+select market_id,NULL,NULL,SUM(sale)
+from sales
+group by market_id
+
+select NULL,NULL,NULL,SUM(sale)
+from sales;
+9.
+assume association: A -> B
+total number of transection: M
+number of transction contains A : N
+number of transection contain both A,B: K
+there must be N <= M
+confidence = K/N
+support = K/M
+confidence >= support based on M <= N;
+
+
+
+
+
+
+		

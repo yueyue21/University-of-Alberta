@@ -1,0 +1,15 @@
+/*
+ *   The script file is used to create the list of all tables
+ *   for the medical information system.
+ *
+ *   We shall first drop all the tables just in case if they were created.
+ *
+ */
+DROP TABLE test_record;
+DROP TABLE not_allowed;
+DROP TABLE doctor;
+DROP TABLE patient;
+DROP TABLE can_conduct;
+DROP TABLE medical_lab;
+DROP TABLE test_type;
+

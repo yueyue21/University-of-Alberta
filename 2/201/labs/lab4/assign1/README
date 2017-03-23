@@ -1,0 +1,25 @@
+name:               Yue YIN
+ONE Card number:    1345121
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D01
+Unix Id:            yyin
+
+====================================================================================================================
+Personal statement:
+1.
+the compiled program alway at argv[0]
+the program is generally dealing with 4 cases:
+	case1:	no -f or -l, argc == 2, 	fixed position.
+	case2:	have -f but no -l, argc == 4, 	there are two subcases.positions for the special term
+	case3:	have -l but no -f, argc == 3, 	fixed position.
+	case4:	have -f and -l, argc == 5,	there are two subcases.
+the program first find the -f and -l if possible, so that we can have the position of the file position if possible.
+then open the files if possible:
+	in terms of -l file, I created an array term[][] to store all the terms 
+2.
+the makefile contains:
+	make
+	make clean
+	make output1- output5
+	make check : check the output file

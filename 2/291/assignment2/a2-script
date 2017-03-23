@@ -1,0 +1,80 @@
+Script started on Tue 15 Oct 2013 05:42:52 PM MDT
+yyin@ua03:~/workspace/291/assignment2>exitsqlplus yyin @a2-query.sql[10Pcript a2-scriptqlplus yyin @a2-query.sql
+
+SQL*Plus: Release 11.1.0.6.0 - Production on Tue Oct 15 17:42:55 2013
+
+Copyright (c) 1982, 2007, Oracle.  All rights reserved.
+
+Enter password: 
+
+Connected to:
+Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+
+Question 1 - yyin
+
+no rows selected
+
+Question 2 - yyin
+
+no rows selected
+
+Question 3 - yyin
+
+NAME
+--------------------------------------------------------------------------------
+ADDRESS
+--------------------------------------------------------------------------------
+PHONE
+----------
+Philip
+11003-90-Ave-NW-Edmonton-AB
+7800000000
+
+Sam
+18203-70-St-NE-Edmonton-AB
+7800000001
+
+NAME
+--------------------------------------------------------------------------------
+ADDRESS
+--------------------------------------------------------------------------------
+PHONE
+----------
+
+Mark
+10034-57-St-SW-Edmonton-AB
+7800000002
+
+
+Question 4 - yyin
+
+no rows selected
+
+Question 5 - yyin
+														where count(c2.test_id) >= c1.test_id)))
+														      *
+ERROR at line 12:
+ORA-00934: group function is not allowed here
+
+
+Question 6 - yyin
+
+no rows selected
+
+Question 7 - yyin
+	    count(distinct t2.test_id)/count(distinct(t1.test_id) abnormal_rate
+                                                                  *
+ERROR at line 2:
+ORA-00907: missing right parenthesis
+
+
+Question 8 - yyin
+Question 9 - yyin
+SQL> exit
+Disconnected from Oracle Database 11g Enterprise Edition Release 11.2.0.3.0 - 64bit Production
+With the Partitioning, OLAP, Data Mining and Real Application Testing options
+yyin@ua03:~/workspace/291/assignment2>exit
+exit
+
+Script done on Tue 15 Oct 2013 05:43:04 PM MDT

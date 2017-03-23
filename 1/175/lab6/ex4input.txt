@@ -1,0 +1,8 @@
+country_name capital currency calling_code ccTLD
+Canada Ottawa CAD +1 .ca
+China Beijing CNY +86 .cn
+Japan Tokyo JPY +81 .jp
+UK London GBP +44 .uk
+France Paris EUR +33 .fr
+Australia Canberra AUD +61 .au
+Argentina BuenosAires ARS +54 .ar

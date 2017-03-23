@@ -1,0 +1,13 @@
+# this is a makefile
+filter: filter.c
+	gcc -Wall -std=c99 -o filter filter.c
+
+output:
+	cat testcases.txt | ./filter >output.txt
+show:
+	cat -n testcases.txt
+	cat -n output.txt
+
+clean:
+	-rm -f *.o filter core
+	-rm -f *.o filter core

@@ -1,0 +1,61 @@
+<!--http://www.roseindia.net/html/html-code-for-student-registration-form.shtml-->
+<html>
+<head>
+<script type="text/javascript" src="validate.js"></script>
+</head>
+<body>
+<div id="image" style="background: url(10.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<form action="newdoctor.jsp" name="newUserRegistration" onsubmit="return(validate());">
+<br><br><br><br><br><br>
+<table cellpadding="8" align="center"
+cellspacing="5">
+
+<tr>
+<td colspan=2>
+<center><font size=4><b>New User Registration Form</b></font></center>
+</td>
+</tr>
+
+<tr> 
+<td colspan=2><center>Family Doctor</center></td>
+</tr>
+
+<tr>
+<td colspan=2><hr width: 100%></td>
+</tr>
+
+<tr>
+<td>Doctor ID:</td>
+<td><select name="Class">
+<option value="-1" selected>select..</option>
+<option value="a">Administrator</option>
+<option value="d">Doctor</option>
+<option value="r">Radiologist</option>
+<option value="p">Patient</option>
+</select></td>
+</tr>
+
+<tr>
+<td colspan=2><hr width: 100%></td>
+</tr>
+
+<tr>
+<td colspan=2>Registration Progress:  
+<progress value="100" max="100"></progress> 3 step left</td>
+</tr>
+
+<tr>
+<td colspan="2"><input type="reset">
+<input type="submit" name="newuser" value="Next Step">
+</form>
+<form action="userManagement.html">
+<center><input type="submit" name="newuserback" value="finish">
+<center><input type="submit" name="newuserback" value="Back">
+</center>
+</form>
+</td>
+</tr>
+
+</table>
+</body>
+</html>

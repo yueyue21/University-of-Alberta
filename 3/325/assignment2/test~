@@ -1,0 +1,6 @@
+#lang racket
+(define (f1 a) (+ a 1))
+(define f2 (lambda (x y) (displayln y) (+ x (+ y 1)) ))
+(let [(a 1) (b 2)] (+ a b) )
+(newline)
+(let [(a 1) (b 2) (c (let [(a 1) (b 2)] (+ a b) ))] (displayln a) (displayln c) (let ((z (* a b))) (display "z is:") (displayln z)) (+ a b) )

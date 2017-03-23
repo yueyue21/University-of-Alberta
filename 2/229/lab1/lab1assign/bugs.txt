@@ -1,0 +1,43 @@
+#the bugs are as follows:
+#1. 
+#the type for the register $a1 is byte. Thus change "lw" to "lb"
+#because the word is 4 bytes.
+#2.
+#in terms of the line "addi $a0 $a0 4", since the location for a byte 
+#is only 1, which means we need to check 1 byte by one 1 byte. Thus, #change "4" to "1"
+#because every time we need to skip 1 byte
+#the modified code is as follows
+#===================================================================
+.data
+.align 2
+.space 3
+New:
+	.byte '-'
+Old:
+	.byte ' '
+Str:
+	.asciiz "Cmput 229 is the absolute bomb.\n"
+
+.text
+main:
+	la	$a0 Str	
+	lb	$a1 Old			# this line is changed
+	lb	$a2 New
+
+	loop:
+		lb	$t0 0($a0)
+		beqz	$t0 done		
+		bne	$t0 $a1 continue
+		
+		sb	$a2 0($a0)
+		continue:
+		addi	$a0 $a0 1	#this line is changed
+		j	loop
+
+	done:
+
+	li	$v0 4
+	la	$a0 Str
+	syscall
+
+	jr	$ra

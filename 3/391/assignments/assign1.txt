@@ -1,0 +1,132 @@
+---------------------------------------------------------------
+CMPUT 391 ASSIGNMENT 1
+Student:	Yue YIN
+Student ID:	1345121
+---------------------------------------------------------------
+
+
+QUESTION 1:
+3.5 normal form
+student ID -> student name
+student ID -> music instrument this student can play
+4.0 normal form
+student ID -> student name
+student ID -> music instrument this student can play
+Explaination:
+In the 3.5 normal form student ID can determine 1 kind of music instrument this
+student can play, if not in the 3.5 normal form would increase the redundency.
+In the 4th normal form studnet ID can determine multiple kinds of music 
+instruments current student can play. All these kinds of music instruments are 
+contained in a set that is determined by exact student ID.
+
+QUESTION 2:
+create trigger allowed_employee
+before insert or update on employee
+for each row 
+declare	
+    dummy integer;
+begin
+    select count(*) into dummy
+    from works w, company c
+    where w.company_name = c.company_name 
+    and new.employee_name =w.employee_name
+    and new.city<>company.city
+    
+    if(dummy>0)
+	then raise_application_error ( -2000,
+		'employee and company must be in the same city');
+    end if
+end
+
+QUESTION 3:
+	ABCDE
+       /     \   A->C
+      AC     ABDE
+      	     /  \  A->C C->D THUS A->D
+      	    AD  ABE
+      	 	Upon here, BE is can not be proved with given FDs thus
+      	 	D={AC,AD,BE,AB}	is not a join lossness decomposition of R with
+      	 	respect of FDs of R   
+QUESTION 4:
+(a)
+right reduce:
+E->D
+E->K
+C->K
+EK->B
+EK->C
+HK->A
+left reduce:
+E->D
+E->K
+C->K
+E->B
+E->C
+HK->A
+minimal cover
+E->D
+C->K
+E->B
+E->C
+HK->A
+a decomposition D={EDBC,CK,HKA} However E,G,H are not on the right side of 
+minimal cover,which means no functional dependency contain them. Thus EGH are
+supposed to put into decomposition as well as candidate keys.
+Then D={EPBC, CK, HKA, EGH}
+(b)
+D is a BCNF since all the non-trival FDs X->A in held in any relation Ri belongs
+to Di, X is a key of Ri.
+QUESTION 5:
+(a)INDEX
+	Using 500 pages for R 1 page for S, 1 page for output,for every tuple 
+in R a index search need to be performed over S.
+Total number of page accessed is 20000 + 20000 * 20 *1.6=660000(pages)
+	Using 500 pages for S 1 page for R, 1 page for output,for every tuple 
+in S, also a index search need to be performed over R.
+Thus, total number of page that accessed is 
+50000 + 50000 * 5 * 1.6 = 450000(pages)    
+(b) Merge Sort
+Merge sort on S(50000):
+with 500 pages in memory replacement selection can deal 1000 pages length each 
+time,thus we need 50 times. since max ways of merge sort is 8, we have celing of
+50/8 is 7, thus 2 levels in the merge sort. Therefore there are 3 loads and 3
+writes intotal, thus, total number of page that accessed in Merge sort on S 
+is 300000.
+Merge sort on R(20000):
+this time we need 20 times for the replacement selection, still 2 level of 
+merge sort need(celing of 20/8 =3),thus, total number of page that accessed in
+Merge sort on R is 120000.
+JOING:
+the cose of merge join is the sum of the page number of S and R since they are 
+sorted, which is 70000.
+So total number of page that accessed is 300000 + 120000 + 70000 = 490000.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

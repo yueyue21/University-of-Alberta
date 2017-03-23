@@ -1,0 +1,405 @@
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:20:46 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:20:46 2013
+
+unfreed: <21> mention.c(138), 41 bytes at 0x1f53730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(138), 41 bytes at 0x1f536b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(138), 41 bytes at 0x1f53630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(138), 41 bytes at 0x1f535b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(138), 41 bytes at 0x1f53530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(138), 41 bytes at 0x1f534b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(138), 41 bytes at 0x1f53430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(138), 41 bytes at 0x1f533b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(138), 41 bytes at 0x1f53330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(138), 41 bytes at 0x1f532b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(138), 41 bytes at 0x1f53230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(138), 41 bytes at 0x1f531b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(138), 41 bytes at 0x1f53130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(138), 41 bytes at 0x1f530b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(138), 41 bytes at 0x1f508d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(138), 41 bytes at 0x1f50850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(114), 41 bytes at 0x1f507d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+unfreed: <4> mention.c(111), 2048 bytes at 0x1f52860  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <3> mention.c(108), 2048 bytes at 0x1f52010  	{07 00 00 00 05 00 00 00 04 00 00 00 0D 00 00 00 ................}
+unfreed: <2> mention.c(105), 2048 bytes at 0x1f517c0  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <1> mention.c(102), 2048 bytes at 0x1f50f70  	{D0 07 F5 01 00 00 00 00 50 08 F5 01 00 00 00 00 ........P.......}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 8889
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:24:34 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:24:34 2013
+
+unfreed: <21> mention.c(138), 41 bytes at 0x1f01730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(138), 41 bytes at 0x1f016b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(138), 41 bytes at 0x1f01630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(138), 41 bytes at 0x1f015b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(138), 41 bytes at 0x1f01530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(138), 41 bytes at 0x1f014b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(138), 41 bytes at 0x1f01430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(138), 41 bytes at 0x1f013b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(138), 41 bytes at 0x1f01330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(138), 41 bytes at 0x1f012b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(138), 41 bytes at 0x1f01230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(138), 41 bytes at 0x1f011b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(138), 41 bytes at 0x1f01130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(138), 41 bytes at 0x1f010b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(138), 41 bytes at 0x1efe8d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(138), 41 bytes at 0x1efe850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(114), 41 bytes at 0x1efe7d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+unfreed: <4> mention.c(111), 2048 bytes at 0x1f00860  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <3> mention.c(108), 2048 bytes at 0x1f00010  	{07 00 00 00 05 00 00 00 04 00 00 00 0D 00 00 00 ................}
+unfreed: <2> mention.c(105), 2048 bytes at 0x1eff7c0  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 6841
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:25:08 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:25:08 2013
+
+unfreed: <21> mention.c(138), 41 bytes at 0xcd3730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(138), 41 bytes at 0xcd36b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(138), 41 bytes at 0xcd3630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(138), 41 bytes at 0xcd35b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(138), 41 bytes at 0xcd3530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(138), 41 bytes at 0xcd34b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(138), 41 bytes at 0xcd3430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(138), 41 bytes at 0xcd33b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(138), 41 bytes at 0xcd3330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(138), 41 bytes at 0xcd32b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(138), 41 bytes at 0xcd3230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(138), 41 bytes at 0xcd31b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(138), 41 bytes at 0xcd3130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(138), 41 bytes at 0xcd30b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(138), 41 bytes at 0xcd08d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(138), 41 bytes at 0xcd0850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(114), 41 bytes at 0xcd07d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 697
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:27:13 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:27:13 2013
+
+unfreed: <21> mention.c(138), 41 bytes at 0x12f0730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(138), 41 bytes at 0x12f06b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(138), 41 bytes at 0x12f0630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(138), 41 bytes at 0x12f05b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(138), 41 bytes at 0x12f0530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(138), 41 bytes at 0x12f04b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(138), 41 bytes at 0x12f0430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(138), 41 bytes at 0x12f03b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(138), 41 bytes at 0x12f0330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(138), 41 bytes at 0x12f02b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(138), 41 bytes at 0x12f0230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(138), 41 bytes at 0x12f01b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(138), 41 bytes at 0x12f0130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(138), 41 bytes at 0x12f00b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(138), 41 bytes at 0x12ed8d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(138), 41 bytes at 0x12ed850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(114), 41 bytes at 0x12ed7d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 697
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:28:16 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:28:16 2013
+
+unfreed: <21> mention.c(139), 41 bytes at 0xe25730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(139), 41 bytes at 0xe256b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(139), 41 bytes at 0xe25630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(139), 41 bytes at 0xe255b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(139), 41 bytes at 0xe25530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(139), 41 bytes at 0xe254b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(139), 41 bytes at 0xe25430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(139), 41 bytes at 0xe253b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(139), 41 bytes at 0xe25330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(139), 41 bytes at 0xe252b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(139), 41 bytes at 0xe25230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(139), 41 bytes at 0xe251b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(139), 41 bytes at 0xe25130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(139), 41 bytes at 0xe250b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(139), 41 bytes at 0xe228d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(139), 41 bytes at 0xe22850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(115), 41 bytes at 0xe227d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 697
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:28:54 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+NULL free: <26> mention.c(93), NULL pointer free'd
+NULL free: <27> mention.c(94), NULL pointer free'd
+
+Stopped at Mon Nov  4 14:28:54 2013
+
+unfreed: <21> mention.c(139), 41 bytes at 0x22c5730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+unfreed: <20> mention.c(139), 41 bytes at 0x22c56b0  	{77 61 74 65 72 20 76 61 70 6F 75 72 00 00 00 00 water vapour....}
+unfreed: <19> mention.c(139), 41 bytes at 0x22c5630  	{61 6D 6D 6F 6E 69 61 00 00 00 00 00 00 00 00 00 ammonia.........}
+unfreed: <18> mention.c(139), 41 bytes at 0x22c55b0  	{69 6F 64 69 6E 65 00 00 00 00 00 00 00 00 00 00 iodine..........}
+unfreed: <17> mention.c(139), 41 bytes at 0x22c5530  	{6E 69 74 72 6F 67 65 6E 20 64 69 6F 78 69 64 65 nitrogen dioxide}
+unfreed: <16> mention.c(139), 41 bytes at 0x22c54b0  	{6F 7A 6F 6E 65 00 00 00 00 00 00 00 00 00 00 00 ozone...........}
+unfreed: <15> mention.c(139), 41 bytes at 0x22c5430  	{78 65 6E 6F 6E 00 00 00 00 00 00 00 00 00 00 00 xenon...........}
+unfreed: <14> mention.c(139), 41 bytes at 0x22c53b0  	{6E 69 74 72 6F 75 73 20 6F 78 69 64 65 00 00 00 nitrous oxide...}
+unfreed: <13> mention.c(139), 41 bytes at 0x22c5330  	{68 79 64 6F 67 65 6E 00 00 00 00 00 00 00 00 00 hydogen.........}
+unfreed: <12> mention.c(139), 41 bytes at 0x22c52b0  	{6B 72 79 70 74 6F 6E 00 00 00 00 00 00 00 00 00 krypton.........}
+unfreed: <11> mention.c(139), 41 bytes at 0x22c5230  	{6D 65 74 68 61 6E 65 00 00 00 00 00 00 00 00 00 methane.........}
+unfreed: <10> mention.c(139), 41 bytes at 0x22c51b0  	{68 65 6C 69 75 6D 00 00 00 00 00 00 00 00 00 00 helium..........}
+unfreed: <9> mention.c(139), 41 bytes at 0x22c5130  	{6E 65 6F 6E 00 00 00 00 00 00 00 00 00 00 00 00 neon............}
+unfreed: <8> mention.c(139), 41 bytes at 0x22c50b0  	{63 61 72 62 6F 6E 20 64 69 6F 78 69 64 65 00 00 carbon dioxide..}
+unfreed: <7> mention.c(139), 41 bytes at 0x22c28d0  	{61 72 67 6F 6E 00 00 00 00 00 00 00 00 00 00 00 argon...........}
+unfreed: <6> mention.c(139), 41 bytes at 0x22c2850  	{6F 78 79 67 65 6E 00 00 00 00 00 00 00 00 00 00 oxygen..........}
+unfreed: <5> mention.c(115), 41 bytes at 0x22c27d0  	{6E 69 74 72 6F 67 65 6E 00 00 00 00 00 00 00 00 nitrogen........}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 697
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:31:59 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+NULL free: <42> mention.c(93), NULL pointer free'd
+NULL free: <43> mention.c(94), NULL pointer free'd
+
+Stopped at Mon Nov  4 14:31:59 2013
+
+unfreed: <21> mention.c(139), 41 bytes at 0xa62730  	{00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 ................}
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 41
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:32:44 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+NULL free: <43> mention.c(93), NULL pointer free'd
+NULL free: <44> mention.c(94), NULL pointer free'd
+
+Stopped at Mon Nov  4 14:32:45 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:33:50 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:33:50 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 14:37:58 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 14:37:58 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 15:18:32 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 15:18:32 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 15:55:45 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 15:55:45 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 16:38:40 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 16:38:40 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 16:43:25 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 16:43:25 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 16:47:43 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 16:47:43 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 16:53:22 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 16:53:22 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0
+
+============= MEMWATCH 2.71 Copyright (C) 1992-1999 Johan Lindh =============
+
+Started at Mon Nov  4 17:11:43 2013
+
+Modes: __STDC__ 64-bit mwDWORD==(unsigned int)
+mwROUNDALLOC==8 sizeof(mwData)==56 mwDataSize==56
+
+
+Stopped at Mon Nov  4 17:11:43 2013
+
+
+Memory usage statistics (global):
+ N)umber of allocations made: 21
+ L)argest memory usage      : 8889
+ T)otal of all alloc() calls: 8889
+ U)nfreed bytes totals      : 0

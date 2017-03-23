@@ -1,0 +1,23 @@
+<HTML>
+<HEAD>
+<TITLE>Data Analysis</TITLE>
+</HEAD>
+
+<BODY>
+<div id="image" style="background: url(10.jpg) no-repeat; width: 100%; height: 100%; background-size: 100%;">
+<br><br><br><br><br><br><br><br>	
+<H1><CENTER>Data Analysis</CENTER></H1>
+<CENTER>
+<P><CENTER>welcome to use our Data Analysis system!</CENTER></P>
+<br>
+<FORM ACTION="dataAnalysisLast.html" METHOD="post" >
+<table>
+<tr><td><input type="radio" name = "enter" value = "123"></td><td><p><b>Display the total number of all pictures</b></p></td><tr>
+<tr><td><input type="radio" name = "enter" value = "2"></td><td><p><b>Analysis by particular value(s)</b></p></td><tr>
+<tr><td><input type="radio" name = "enter" value = "3"></td><td><p><b>Analysis by attribute(s)</b></p></td><tr>
+</table>
+<INPUT TYPE="submit" NAME="next" VALUE="GO" style= "width: 200; height: 50">
+</FORM>
+</div>
+</BODY>
+</HTML>

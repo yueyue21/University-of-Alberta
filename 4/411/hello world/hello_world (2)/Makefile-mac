@@ -1,0 +1,4 @@
+FLAGS = -framework Cocoa -framework OpenGL -framework GLUT -I/opt/X11/include -I/opt/local/include -L/opt/X11/lib -L/opt/local/lib -lGLEW -lGLUT -Wno-write-strings
+
+%: %.cpp
+	g++ $*.cpp -o $* $(FLAGS)

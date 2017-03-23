@@ -1,0 +1,7 @@
+JUST ABOUT THE COMPILING THE PROGRAM.
+These two server programs can be compiled by "gcc" where argv[2] suppose to 
+contain the directory of the file documents END WITH '/'(IMPORTANT),all the
+documents are contained in such dir. argc[3] suppose contain the complete logfile
+name which contain the directory of it also.
+
+

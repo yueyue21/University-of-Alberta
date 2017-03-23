@@ -1,0 +1,62 @@
+#lang racket
+(define (get-define1 a) 
+  (car a))
+(define (get-define2 a)
+  (second a))     
+(define (transform-if-to-cond code)
+  (define (trans c p q)
+    (list 'cond (list c p) (list 'else q) ) )
+  (if (and (list? code) (not (null? code)) (eq? 'if (first code)))
+      (apply trans (map transform-if-to-cond (rest code)))
+      (if (list? code) 
+          (map transform-if-to-cond code) 
+          code)
+      ))
+(define (transform-let-to-apply code)
+  (define (trans d)
+    (cons (cons  'lambda (cons (map get-define1 (car d)) (cdr d))) (map get-define2 (car d))))
+  (if (and (list? code) (not (null? code)) (eq? 'let (first code)))
+      (apply trans (map transform-let-to-apply (rest code)))
+      (if (list? code) 
+          (map transform-let-to-apply code) 
+          code)
+      ))
+
+(define code-1
+  '(let ( (x 1) (y 2) ) 
+     (let ( (z (+ x y)) )
+       (if (< x y) 
+           (list "x smaller")
+           (list "y smaller")
+           )
+       )
+     ))
+
+(define (test-1)
+  (newline)
+  (displayln code-1)
+  (displayln (eval code-1))
+  (newline)
+  
+  ; test the if transform
+  (define t1 (transform-if-to-cond code-1))
+  (displayln t1)
+  (displayln (eval t1))
+  (newline)
+  
+  ; test the let transform
+  (define t2 (transform-let-to-apply code-1))
+  (displayln t2)
+  (displayln (eval t2))
+  (newline)
+  
+  ; test the two different composition orders of the transforms
+  (define t3 (transform-let-to-apply (transform-if-to-cond code-1)))
+  (displayln t3)
+  (displayln (eval t3))
+  (newline)
+  (define t4 (transform-if-to-cond (transform-let-to-apply code-1)))
+  (displayln t4)
+  (displayln (eval t4))
+  )
+

@@ -1,0 +1,4 @@
+select count(*)
+from radiology_record rr,pacs_images pp
+where rr.test_date between '01-May-2007' /*input1_to_date*/ and '01-May-2008'/*input2_to_date*/
+and pp.record_id = rr.record_id;

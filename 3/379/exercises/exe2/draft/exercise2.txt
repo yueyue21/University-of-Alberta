@@ -1,0 +1,57 @@
+PART1
+Question1:
+(2^3)*5 == 40
+	Since each fork would create 2 threads, by which each thread created 
+will go though the for loop that would creatd 5 thread every time it is called,
+with 3 forks there, total number of threads created is 40,when the program 
+terminated.
+
+Question2:
+/*this question is coorprated with Bicheng Yan and Xiaochong Zhou, but this */
+/*idea was initially created by me,even I'm not sure with it : ) */
+The max amount of time that the process can be suspended is some certain number
+that pre-initialized in the OS.
+	Assume there are n processes beside the currently executing process P0 
+that OS will switch from. When n == 1, it takes at least 2C seconds for the OS 
+to give back the focus to the original process where the first C seconds stands
+for switching out from current process and the second C seconds stands for 
+switching back to the current porcess.Nowthat we did not consider the time 
+consumed by the process beside the original process, it would be at least 
+2C seconds. 
+	In general it would be at least n*2C seconds.However, the maximum 
+amount of time supposed to be initialized in the OS, otherwise, there would be 
+too much spin lock there. Thus n*2C must less than the time initialized in the 
+OS. If not, the current process may terminated when OS come back to it. 
+
+Question3:
+---------------------
+void *status;
+for (i = 0; i < NUMBER_OF_THREADS; i++){
+	pthread_join(thread[t], &status)
+	}
+estimated_pi = (4× circle_count)/NUMBER_OF_DARTS
+---------------------
+Terminate every thread one by one
+calculate the estimated_pi
+
+Effect of increasing the variable NUMBER_OF_DARTS:
+	The lager NUMBER_OF_DARTS is, the more accurate pi will be extimatedand
+(sample size increased) the slower (with fixed number of threads etc) the 
+program runs.
+Explain the effect of increasing the variable NUMBER_OF_THREADS:
+	To a certain amount,the more NUMBER_OF_THREADS is, the more thread 
+executing in parallel the faster the program can run. However, there exist a limit 
+that increasing the number of threads can shrink the time consumed by the 
+program, since increasing too many thread can lead to more inter communication. 
+
+PART2
+1.
+Where is Process Control Block(PCB) stored? 
+If it is in memory, how can we make sure it can be accessed in a short time? 
+If it is in cach, is the cach got enough space for the PCB? since it is of type 
+of struct,even we can store it when there's not too much information about the 
+process, which still can be large.
+Personally, I say is in the memory. Because slow is better than nothing. 
+However, I'm not sure, or it is stored somewhere else I don't know.
+2. 
+In the processer

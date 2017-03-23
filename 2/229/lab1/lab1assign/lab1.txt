@@ -1,0 +1,67 @@
+#---------------------------------------------------------------
+# Assignment:           1
+# Due Date:             September 27, 2010
+# Name:                 Adam Wolfe Gordon
+# Unix ID:              awolfe
+# Lecture Section:      A1
+# Instructor:           Nelson Amaral
+# Lab Section:          D04
+# Teaching Assistant:   Adam Wolfe Gordon
+#---------------------------------------------------------------
+#Question1:
+# the output of the program is "Number = 35"
+#---------------------------------------------------------------
+#Question2:
+# the max number of t0 is 0x000000d3
+#---------------------------------------------------------------
+#Question3:
+# PC = 0x00400038
+#---------------------------------------------------------------
+#Question4:
+# 7 times.
+#---------------------------------------------------------------
+#Question5:
+# N:0x10010018
+# u:0x10010019
+# m:0x1001001a
+# b:0x1001001b
+# e:0x1001001c
+# r:0x1001001d
+#-----------------------------------------------------------------
+#Question6:
+# 0x3344003c
+# 3C: <
+# 00: NUL
+# 44: D
+# 33: 3
+# that is "< NULL D 3"
+#----------------------------------------------------------------
+#Question7:
+# 0011 0011 0100 0100 0000 0000 0011 1100  == 860094524
+#----------------------------------------------------------------
+#Question8:
+# .word:Store the 4 32-bit in successive memory words
+# .byte:Store 2 values(10 AND "c") in successive bytes of memory
+# .align:Align the nesxt datum on a 2 to the power of 2 byte boundary
+# .space: allocate 9 bytes of space in the current segment
+# .asciiz: store the string "ABCD" in memory and null-terminate it
+# .ascii: store the string "EF" ,but do not null-terminate it
+# 21: 0x10010000
+# 88: 0x10010004
+# -5: 0x10010008
+# -10:0x1001000c
+# 10: 0x10010010
+# 'c':0x10010011
+# "A":0x1001001d
+# "B":0x1001001e
+# "C":0x1001001f
+# "D":0x10010020
+# "E":0x10010022
+# "F":0x10010023
+#----------------------------------------------------------------
+#Question9:
+#print $s0 or p $s0
+#----------------------------------------------------------------
+#Question10:
+# branching contral structure is need to jump out the loop of duplicating
+# the data we recived.

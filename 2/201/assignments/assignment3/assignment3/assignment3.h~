@@ -1,0 +1,20 @@
+#define PI acos(-1.0)
+bool linecross(double Ax, double Ay,double Bx, double By,double Cx, double Cy,double Dx, double Dy);
+void handle_timeout(int signal);
+sigset_t block_mask_g;
+void setup_curses();
+void unset_curses();
+void convert(FILE* landscape, FILE* excutable);
+int degree=90;
+float vy=0,vx=0,lastspeed=0;//speed of vertical and horizontal are 0 since it was static at first
+FILE *landscape,*excutable;
+double ax=310,ay=50,bx=325,by=50,cx=330,cy=70,dx=305,dy=70;//initialize coordinates for the ship
+double midx,midy;
+float gravity,thrust1,thrust;
+int T=0, E=0,R=0;//switch for if there is  trust; NO erase for the fire is required before rotation; no erase required before thrust
+float FX,FY;
+int fuel=350;
+int r=15,g=254,b=50,stop=0,improve=0;
+int x[50];
+int y[50];
+int total_land_points =0;

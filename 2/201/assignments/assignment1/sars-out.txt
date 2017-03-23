@@ -1,0 +1,46 @@
+5183,878,oxygen
+5758,978,oxygen
+13662,2305,carbon dioxide
+17132,2883,carbon dioxide
+28434,4896,carbon dioxide
+28447,4900,argon
+28466,4904,nitrogen
+28494,4909,oxygen
+28510,4910,carbon dioxide
+28698,4944,methane
+28765,4954,methane
+28931,4984,methane
+29055,5003,methane
+29404,5069,methane
+29435,5074,methane
+29748,5127,methane
+29858,5142,carbon dioxide
+30073,5178,methane
+30178,5197,methane
+30382,5232,methane
+30576,5264,methane
+30911,5323,methane
+31003,5337,ammonia
+31159,5363,ammonia
+38645,6663,methane
+61818,10523,methane
+61933,10537,methane
+64155,10903,methane
+66701,11321,argon
+76462,12862,carbon dioxide
+82706,13847,methane
+82867,13876,methane
+83070,13908,methane
+83225,13931,methane
+83419,13964,methane
+83710,14008,methane
+83894,14034,methane
+84058,14056,methane
+84355,14103,methane
+84493,14124,methane
+84609,14142,methane
+84828,14176,methane
+85162,14226,methane
+85379,14259,methane
+85521,14282,ammonia
+87786,14640,methane

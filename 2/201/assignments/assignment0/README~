@@ -1,0 +1,19 @@
+name:               Yue YIN
+ONE Card number:    1345121
+lecture section:    A1
+instructor's name:  Davood Rafiei
+lab section:        D01
+Unix Id:            yyin
+
+=============================================
+Personal statement:
+1.
+the code could filt all stuff inside a "< >"
+but can not do a input for "<hello1<hello2>hello3>"
+the output for the input above is "hello3>".
+2.
+there are 4 instructions in makefile:
+make: compile the program
+make show: show the text in both files(you need to output the output file before you show it.)
+make output: create a new txt file contain the filtered text
+make clean: remove the output file and the compiled file

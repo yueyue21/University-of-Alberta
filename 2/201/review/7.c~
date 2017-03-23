@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	char str[] = "abcde!";
+	for (char *p = str; *p;p++)
+	{
+		if (*p >= 'a' && *p <= 'z')
+			{
+			printf("%c\n",*p);
+			*p =  'A' - 'z';
+			printf("********%c\n",*p);
+			}	
+	}
+	printf("%s\n",str);	
+}

@@ -1,0 +1,51 @@
+Question1:
+Atomic integer is better, since we only need to track the number of the hits rather
+than lock some other read and write instructions. Atomic integer just fit thus case.
+Question2:
+A
+The race conditions are: multiple threads would modify variable number_of_processes
+(give increment(s) or decreament(s) on this variable).
+B
+we need to mutex locks: 
+(1)one placing acquire() before the if statement in the allocate_process function 
+and the release() after "++number_of_processes;"
+(2)The other one placing within the release_process() fuction like:
+lock.acquire();
+--number_of_processes;
+lock.release();
+/*where lock is another pre-initialized mutex lock name*/
+C
+NOPE.
+The fact is,beside of dealing the safty of variable number_of_processes, we also
+need to cover the if statement in fuction of allocate_process().Checking if the 
+counter of processes is more than the limit ought to block any other threads that 
+may modify the counter.
+Question3:
+A) FCFS (First Come First Serve)
+This way is quite trivial, FCFS is the best way to deal some batch like problems.
+With the tasks are quite small, by which we could ALMOST ignore the waiting time 
+for the short jobs after the long jobs unless the standard diviation of the length
+of jobs is quite large(the length difference between the jobs is very significant).
+B) SJF (Shortest Job First)
+SJF can be the best way in our case, since they are short jobs. It is also better 
+than FCFS because of there always have some length difference between jobs.
+C) RR (Round Robin)
+If we use Round Robin in such case,unavoidablly we are going have a lot of context
+switches if we set the time quantum is very short, whose time would be quite 
+significant, since we are going to deal “short” tasks. However, if we set the time
+quantum is very long, that is almost the same as FCFS.
+
+
+Part 2:
+Question1:
+In CMPUT 229,synchronization is implmented by load-and-link and save-conditional on
+particular address of memory in a register.Thus the resourse is always come from the 
+memory. However, if we try to simultaneously do some modifications amoung the hard
+disk, is it necessarily to consider the synchronization on performing a reading or 
+writing on the same resouse on the hard disk?   
+Question2:
+If we are going to implement a RR scheduling to the ready list, how can we estimate
+a proper time quantum for the dynamic ready list(it is dynamic because new jobs going
+to be append to this list). Is it by isolating part of them? such as first 50 jobs in 
+the list is static.Then do the rest?
+

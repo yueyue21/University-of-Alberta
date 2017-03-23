@@ -1,0 +1,7 @@
+f: fire
+[: move left
+]: move right
+
+
+
+instead of killing threads, I would like to reassign those threads;

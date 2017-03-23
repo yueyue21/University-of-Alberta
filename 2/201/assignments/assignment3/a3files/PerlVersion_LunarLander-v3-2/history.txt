@@ -1,0 +1,86 @@
+Lunar Lander Simulation
+Cmput 174
+H. James Hoover
+
+History 
+
+Version 3.2 2009-01-03
+    - fixed detection of case where lander is close to terrain y boundary, in 
+    which case the lander is prevented from any further off screen motion in y.
+    This was preventing landing on terrain close to the bottom of the screen.
+
+Version 3.1 2008-11-23
+    - fixed the restart key by removing any scheduled simulation time step
+    events, and then initializing
+    - modified GetTerrainInfo to handle situations where there is no terrain 
+    below the lander, will return the empty list.
+    - improved the sticking at the boundary of the simulation space.  Now
+    sticks at top and bottom and sets y velocity and acceleration to 0
+    - improved slope handling, compute the terrain slope only once
+
+Version 3.0 2008-11-22
+    - Complete rewrite to use Tkx.  
+    - Do not delete and redraw lander every time, just modify the existing
+    graphics object
+    - Got rid of local clipping routines and use overlap detection 
+    features of Tcl/Tk
+    - still need to fix the restart key causing multple scheduling of update 
+    time step events when lander is flying, this causes time to speed up!
+
+
+Version 2.2 2008-10-29
+    - added new methods to lander.pl
+    main::GetSpaceBoundaries() 
+    main::GetLanderDimensions()
+    main::GetGravity()
+    main::GetEngineThrust()
+    main::GetTime()
+    - added new methods to AutoPilot.pm
+    AutoPilot::Initialize()
+    AutoPilot::On()
+    AutoPilot::Off()
+    - fixed bug in lander.pl that was reporting incorrect line segment
+    number on landing and crash.  Also added additional line segment 
+    information.
+
+Version 2.1 2008-10-28  
+lander.pl
+    - added -d debug option to set lander.pl debug flag
+    - added -D debug option to set autopilot debug flag, and
+    main::GetAutopilotDebug() to obtain the flag
+    - added -p pause delay to allow setting pause time between simulation 
+      steps to speed up or slow down time.
+    - fixed an error in the position information for the lander.  The lander
+      image is now properly centered over the actual position
+AUtoPilot.pm
+    - added info about lander dimensions 
+    - new call main::GetAutopilotDebug to fetch -D option to make autopilot
+    debugging easier.
+
+Version 2.0 2009-10-21 - converted from Tk to Tkx so will run under Active State
+    Perl 5.8 and 5.10
+
+Version 1.7 2009-10-28 - back updated additions to Version 2.1, will not
+    support version 1.x any further.  Changes to AutoPilot.pm and lander.pl
+
+Version 1.6 2008-09-09 - added -T option to load a terrain description. 
+Cleaned up some of the terrain code wrt naming conventions.
+
+Version 1.5 2007-10-18 - added documentation in help for the -l command 
+line option.
+
+Version 1.4 2007-10-17 - added the -l x command line option to set x as the
+target landing zone x-coordinate so that the autopilot knows where to go.
+It can obtain this information by calling: main::GetTargetLandingZoneX()
+
+Version 1.3 2007-10-17 - fixed bug in physics (acceleration term was wrong), 
+explicity mention delta_t in the physics tersm, delta_t = 1 sec.  Added example
+of how to keep track of information over calls to DoLanding.
+
+Version 1.2 2007-10-16 - fixed bug in rotate lander that was doing rotations 
+in 3 degree increments instead of 1.
+
+Version 1.1 2007-10-15 - official release with comments on AutoPilot.pm 
+module interface.
+
+Version 1.0 2007-10-13 - preliminary release for keeners.

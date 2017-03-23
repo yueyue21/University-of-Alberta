@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+char  term[100][265];
+char ch;
+int a = 1,b = 0;
+int main(void){
+  while ((ch = getchar()) != EOF){
+    if (ch == '\n'){
+      term[a][b] = ch;
+      a ++;
+      b = 0;	
+    }
+    else{
+      term[a][b] = ch;
+      b ++;	
+    }	
+  }
+  while(a != 0){
+    printf("%s",term[a]);
+    a = a - 1;
+  }
+  return 0;
+}

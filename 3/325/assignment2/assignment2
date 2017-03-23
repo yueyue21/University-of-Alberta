@@ -1,0 +1,30 @@
+(define (transform-if-to-cond code)
+  (define (trans c p q)
+    (list 'cond (list c p) (list 'else q) ) )
+  (if (and (list? code) (not (null? code)) (eq? 'if (first code)))
+      (apply trans (map transform-if-to-cond (rest code)))
+      (if (list? code) 
+          (map transform-if-to-cond code) 
+          code)
+      ))
+     
+(define (transform-let-to-apply code)
+     (define (trans d) 
+       (list (cons 'lambda (cons (list (caar (car d)) (caadr (car d)) ) (cdr d)))  (second (car (car d))) (second (cadr (car d)) )))
+  
+  (if (and (list? code) (not(null? code)) (eq? 'let (first code)))
+      (apply trans (map transform-let-to-apply (rest code)))
+      (if (list? code)
+          (map transform-let-to-apply code)
+          code)
+      ))
+
+
+
+  
+      ;(let [(a 1) (b 2) (c (let [(a 1) (b 2)] (+ a b) ))]   (displayln a) (displayln c) (let ((z (* a b))) (display "z is:") (displayln z))    (+ a b) )
+      ; (let ( (v1 e1) (v2 e2) ... (vn en) ) b1 b2 ... bk )
+      ; =>
+      ; ((lambda (v1 v2 ... vn) b1 b2 ... bk) e1 e2 ... en)
+     
+      

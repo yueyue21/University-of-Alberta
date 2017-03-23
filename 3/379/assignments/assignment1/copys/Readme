@@ -1,0 +1,39 @@
+ CMPUT 379 Assignment1
+ Prof: 		Martha White 
+ Student: 	Yue YIN (1345121)
+ Section:	B1
+------------------------------------------------------------------------------
+This a sample result might differs from mechine to mechine,or the case that you 
+uncomment part of the code.
+here it goes:
+the very beginning of the memory always neither readable or writeable
+0x8048000         8192            0       /*text*/  
+0x804a000         4096            1       /*data(initialized & un initialized)*/ 
+0x9d12000         135168          1      /*heap, a readable big range*/   
+0xf75ce000        4096            1       /*  
+0xf75cf000        1728512         0         library
+0xf7775000        16384           1         
+0xf77ab000        8192            1         
+0xf77ad000        139264          0       
+0xf77cf000        4096            1         */
+0xff850000        139264          1 	 /*stack*/
+
+
+
+	The chunk of 0xff850000 must the stack, since the location of it is 
+quite high.also it can be modified and load, which agrees to the fact that it
+contains some variables, or prameters. But unfortunately, we can not know such 
+variables are local ones or globle ones only by the test we implemented. 
+
+	In terms of first 2 chunks, they are known as continer of text, which 
+can be some excutable items. Such areas contains the bss segment and text segment
+
+	The chunk of 0x9d12000 is obviousely larger than the previous two chunks.
+which can be used to allocate a dynamic storage
+
+	The rest of the memory contains library functions(can not know only buy
+the test we implemented). Some of them are read only while some can be modified.
+
+
+
+

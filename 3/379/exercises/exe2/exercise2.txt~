@@ -1,0 +1,51 @@
+PART1
+Question1:
+(2^3)*5 == 40
+	Since each fork would create 2 threads, by which each thread created 
+will go though the for loop that would creatd 5 thread every time it is called,
+with 3 forks there, total number of threads created is 40,when the program 
+terminated.
+
+Question2:
+C seconds
+Since every thread has only 2 conditions: spining lock or be stored(dead 
+temporarily), that indicates a thread need to be design for living long 
+enough for the its trun to store, which at most need to be C seconds on the 
+purpose of minimize the spining time.
+
+Question3:
+---------------------
+void *status;
+for (i = 0; i < NUMBER_OF_THREADS; i++){
+	pthread_join(thread[t], &status)
+	}
+estimated_pi = (4× circle_count)/NUMBER_OF_DARTS
+---------------------
+Terminate every thread one by one
+calculate the estimated_pi
+
+Effect of increasing the variable NUMBER_OF_DARTS:
+	The lager NUMBER_OF_DARTS is, the more accurate pi will be extimatedand
+(sample size increased) the slower (with fixed number of threads etc) the 
+program runs.
+Explain the effect of increasing the variable NUMBER_OF_THREADS:
+	To a certain amount,the more NUMBER_OF_THREADS is, the more thread 
+executing in parallel the faster the program can run. However, there exist a limit 
+that increasing the number of threads can shrink the time consumed by the 
+program, since increasing too many thread can lead to more inter communication. 
+
+PART2
+1.
+Where is Process Control Block(PCB) stored? 
+If it is in memory, how can we make sure it can be accessed in a short time? 
+If it is in cach, is the cach got enough space for the PCB? since it is of type 
+of struct,even we can store it when there's not too much information about the 
+process, which still can be large.
+Personally, I say is in the memory. Because slow is better than nothing. 
+However, I'm not sure, or it is stored somewhere else I don't know.
+2. 
+For the OS, the OS can divide a task into several processes. However, process 
+can be large or small based on how many threads within it. So how can a core 
+handle a really large process that contain too many threads? Also, is that 
+possible that OS can combine 2 or more small processes in to a larger process 
+for a core in multi-processer to compute?

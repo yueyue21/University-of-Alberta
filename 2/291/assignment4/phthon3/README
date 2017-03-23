@@ -1,0 +1,11 @@
+The sample python program bsd.py can be used to create and populate a Berkeley DB with a specific set of
+Key/Data strings.
+
+In order to use a C random number generator, the python sample program uses a shared library file libfoo.so,
+which can be built by simply entering
+   ./run.sh
+
+
+
+
+ 

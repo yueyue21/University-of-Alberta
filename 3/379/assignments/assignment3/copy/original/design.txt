@@ -1,0 +1,32 @@
+**** User Documentation
+the saucers may have same speed(sticking together always), shoot to them can only 
+kill one saucer, which seems like nothing happened.
+Explain the start-up to your game, game play and game over.
+the saucers can be faster and faster as the time passed
+the saucers can appear up to 7 rows as the time passed
+**** Developer Documentation
+
+** Code Structure
+
+Explain what the main function does. Then break up your explanation into functionality, for example, Configuration (for all operations related to start-up and configuration), Shooting (with all the functionality for creating and moving rockets), Rendering (with all functionality for display), etc. Also explain any important data structures, including structs.
+
+** Threads
+thrds is used for both site and saucers, where the thrds[0] is used for the site
+
+fire_thrds is used for only rockets with limit of 20(0~19), since there are at 
+most 20 rockets can be displayed on the screen at the same time(theoretically).
+once ever a rocket hit a saucer or reach top of the screen, current thread exits.
+The mechanism of ramainder is always lower than the divider enable me to reuse
+the indexes of threads: game_fire%(total_fire+1) < total_fire+1
+Explain what your main thread does, what your saucer threads do, etc.
+
+** Critical Sections
+keeping the drawing part locked and part the curses is very important, otherwise,
+the screen always display some annoying stuff.When ever using addch,addstr or 
+mvprintw,which is considered as drawing, is quite necessary to be kept into lock,
+by which we can refuse annoying stuff displaying on the screen.
+
+
+those increment on counters such as points, can not be locked, otherwise, they 
+may not increase simultaneously.
+Explain what parts of the code are critical sections, what global variables and mutexes might be associated with those sections, etc.

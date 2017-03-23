@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<form>
+Checkbox: <input type="checkbox" id="myCheck">
+</form>
+<br>
+
+<checkbox onclick="disable()">Disable checkbox</checkbox>
+<button onclick="undisable()">Undisable checkbox</button>
+
+<script>
+function disable()
+  {
+  document.getElementById("myCheck").disabled=true;
+  }
+function undisable()
+  {
+  document.getElementById("myCheck").disabled=false;
+  }
+</script>
+
+</body>
+</html>
+

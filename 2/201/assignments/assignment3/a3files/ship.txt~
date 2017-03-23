@@ -1,0 +1,6 @@
+drawSegment 310 50 325 50
+drawSegment 325 50 335 70
+drawSegment 335 70 305 70
+drawSegment 305 70 310 50
+pause 5
+end

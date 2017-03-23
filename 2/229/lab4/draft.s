@@ -1,0 +1,23 @@
+.data
+
+.text
+
+main:
+
+		li	$t0 100
+		#li	$t6 6000
+		mtc0	$zero $9
+		
+	loop:
+		mfc0	$k0 $9
+		rem	$t2 $k0 $t0
+		beq	$t2 0 print
+		j	loop
+	
+	print:
+		div	$t1 $k0 $t0
+		li	$v0 1
+		move	$a0 $t1
+		syscall
+		j	loop
+	exit:

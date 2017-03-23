@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int FS,LS,BS,CTS,TS,CS;/*set a switch to indicate if there is -f,-l,-b,-t or -c,-t,-c option*/
+FS=0;
+LS=0;
+BS=0;
+CTS=0;
+TS=0;
+CS=0;
+int HaveOption = 0;/*set a swich to check if there is an option*/
+int main(int argc, char *argv[])
+{
+	for(int i=0; i<argc; i++)
+	{
+		if(argv[i][0]=='-')
+		{	
+			HaveOption = 1;
+			switch(argv[i][1])
+			{
+				case'f':
+					FILE *readfp; 	/*declare the readfile pointer*/
+					readfp=fopen(argv[i+1],"r");
+					FS=1;	/*set the switch as 1 to indicate if there is -f option*/
+					break;
+				case'l':
+					FILE *termfp; 	/*declare the termfile pointer*/
+					termfp=fopen(argv[i+1],"r");
+					LS=1;	/*set the switch as 1 to indicate if there is -l option*/
+					break;
+				case'b':
+					char *nb;	/*declare the nearby term pointer*/
+					*nb = argv[i+1];
+					BS=1;	/*set the switch as 1 to indicate if there is -b option*/
+					break;
+				case't':
+					CTS=1;	/*set the switch as 1 to indicate if there is -t or -c option*/
+					TS=1;	/*set the switch as 1 to indicate if there is -t option*/	
+					int *tdis;	/*declare the term distance pointer*/
+					*tdis = argv[i+1];
+					break;				
+				case'c':
+					CTS=1;	/*set the switch as 1 to indicate if there is -t or -c option*/
+					CS=1;	/*set the switch as 1 to indicate if there is -c option*/
+					int *ctis;	/*declare the char distance pointer*/
+					/*if(argv[i][2]!=' ')
+					{
+											
+					}*/
+					*ctis = argv[i+1];
+					break;
+				default:
+					printf("Undifined option:-%c\n",argv[i][1]);			
+			}
+		}	
+	}
+	if(HaveOption==0 && argc!=2)
+	{
+			printf("Wrong input!no option and argc != 2");
+	}
+}

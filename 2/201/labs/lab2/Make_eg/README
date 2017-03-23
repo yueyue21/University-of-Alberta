@@ -1,0 +1,11 @@
+Use as sample code for Makefile presentation, and to illustrate the
+math needed for asn1.  (Style here is not correct.)
+
+Files:  Makefile, draw0.c, draw0.h
+
+Need sketchpad.jar (from Assignment 1 page) in working directory.
+
+Compile:  make
+Run:      ./draw0
+
+See comments in draw0.c for what to enter.

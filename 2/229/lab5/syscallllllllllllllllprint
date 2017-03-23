@@ -1,0 +1,58 @@
+li	$v0 1
+				move	$a0 $t9
+				syscall
+				li	$v0 10
+				syscall
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				la	$t8 array2
+				la	$t7 array1
+				la	$t9 array3
+				li	$t2 0				#counter for array2
+				
+				loop4:
+					li	$t3 0				#counter for  array1 sub loop4
+					la	$t7 array1			#reinitialize $t7
+					beq	$t2 $t9 everything_done	#finish reading array2
+					lw	$t1 4($t8)			#$t1 current leader line in array2
+					lw	$t5 0($t8)			#starter of edge
+					lw	$t0 0($t7) 			#t0 current line of array1
+					bne	$t0 $t1 sub_loop4
+						
+				
+				sub_loop4_back:
+					#sw		0($t9)
+					addi	$t9 $t9 4
+					addi	$t8 $t8 8
+					addi	$t2 $t2 1
+					j	loop4
+					
+				sub_loop4:
+					addi	$t3 $t3 1
+					addi	$t7 $t7 8			#next block in array1
+					lw	$t0 0($t7)
+					beq	$t0 $t1 return_counter	#if line in array1 == current line in array2
+				
+					j	sub_loop4
+				return_counter:
+					addi	$t3 $t3 1
+					shift_back:
+						beq	$t3 $t4 cmput_current
+						sll	$t3 $t3 1
+						j	shift_back
+				cmput_current:
+				

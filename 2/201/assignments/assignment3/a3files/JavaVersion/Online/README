@@ -1,0 +1,33 @@
+
+This briefly describes how we marked your asn3.
+
+input and output files, and the TestStack and TestQueue classes are in
+asn3_marking_files.zip.
+
+Most output compared in part using diff -b.
+
+Part 1
+
+  Ran TestStack (which calls your IntegerStack).  Compared output to
+  correct output, which is in
+
+    output.1.1.testStack.txt
+
+  Also ran RPN on 2 expressions
+
+    3 9 6 - +                 (in input.1.2.1.like_online.txt
+                               correct output in output.1.2.1.like_online.txt)
+
+    23 4 - 9 5 4 + + + 10 -   (in input.1.2.2.harder.txt
+                               correct output in output.1.2.2.harder.txt)
+
+Part 2
+
+  Ran TestQueue (which calls your WaitingArea).  Compared output to
+  correct output, which is in
+
+    output.2.3.testQueue.txt
+
+  (Also ran PassportControl twice.  Output just needed to look correct.)
+
+See comments in marksheet for more information.
